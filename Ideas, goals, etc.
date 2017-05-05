@@ -2,7 +2,7 @@
 
 \usepackage{amsmath, amsfonts}
 
-\title{Some Ideas, Goals, etc.}
+\title{Some Ideas, Issues, Goals, etc.}
 
 \author{Nicky}
 
@@ -11,3 +11,13 @@
 \begin{document}
 
 \maketitle
+
+$\bullet$ The biggest issue right now is the lack of a functorial compactifications for arbitrary (or even homotopically finitely presented) $dg$-categories. Efimov (and others) have constructed compactification for a lot of $dg$-categories coming from geometry, and their construction can be made functorial (I'm pretty sure)
+
+
+$\bullet$ My first idea for getting around this issue (other than trying to construct functorial categorical compactifications myself) is to take a simplicial approach, like the one in Gilet and Soulet. The idea being that $dg$-categories can't be compactified in one easy step, necessarily, but maybe the problem is more tractable (abstractly, if probably not computationally) using simplicial resolutions. This would also lead to some useful spectral sequences hopefully. 
+
+$\bullet$ Most recently I have been pondering the possibility of defining a \emph{compactly supported spectrum} of $C^{*}$-algebras, and possibly a broader class of rings. I'm trying to determine if this has already been done, and reading up on $C^{*}$- algebras in some notes by Dana Williams at (I think) Duke. 
+
+
+\end{document}
