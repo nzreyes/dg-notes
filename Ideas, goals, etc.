@@ -1,0 +1,13 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amsfonts}
+
+\title{Some Ideas, Goals, etc.}
+
+\author{Nicky}
+
+\date{2017}
+
+\begin{document}
+
+\maketitle
