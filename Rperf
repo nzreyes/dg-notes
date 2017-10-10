@@ -1,0 +1,96 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amsfonts}
+
+\newcommand{\rperf}{\mathbb{R}perf}
+\newcommand{\lperperf}{L_{pe}(\mathbb{R}perf)}
+\newcommand{\lpemc}{L_{pe}(M_{c})}
+\newcommand{\canon}{\mathcal{E}}
+\newcommand{\cala}{\mathcal{A}}
+\newcommand{\tperf}{\mathbb{T}_{\rperf}}
+
+\title{Rperf}
+
+
+\author{Nicky}
+
+\date{2017}
+
+\begin{document}
+
+\maketitle
+
+\section {What we are computing}
+
+We are interested in the K theory of the dg-category of perfect complexes on $\mathbb{R}perf$: 
+
+\begin{equation}\label{firstlim}
+L_{pe}(\mathbb{R}perf) = \lim_{specA\rightarrow \mathbb{R}perf}\hat{A}_{pe},
+\end{equation}
+
+where the above homotopy limit is indexed by all maps from affine derived schemes into $\mathbb{R}perf$, and $\hat{A}_{pe}$ denotes the dg-category of perfect modules over the normalization of a simplicial commutative algebra, $A$, with quasi-isomorphisms inverted. We will always refer to objects of $\hat{A}_{pe}$ just as perfect $A$-modules and write tensor products, etc., with the normalization operation omitted. 
+
+Applying Yoneda, we see that the data of a perfect complex, $T$, on $\mathbb{R}perf$ consists of: 
+
+$\bullet$ for each pair, $(A,M)$, of a derived ring, $A$, and a perfect $A$-module, M, an $A$-module, $T_{(A,M)}$, and
+
+$\bullet$ for each map of derived rings, $f: A \rightarrow B$, and each $A$-module, $M$, a quasi-isomorphism between $T_{(A,M)}\otimes_ f B$ and $T_{(B,N)}$, where $N=M \otimes_ f B$.
+
+The above quasi-isomorphisms are required to satisfy a homotopy-coherent compatibility condition. 
+
+Notice $\rperf$ has a canonical perfect complex, $\mathcal{E}$, defined by $\canon_{(A,M)}:=M$. Clearly, also, the tensor unit in $\lperperf$ is represented by $\mathcal{O}$, where $\mathcal{O}_{(A,M)}:=A.$
+
+Another observation is that each $T\in \lperperf$ has a collection of "free parts." This is the collection of complexes of $k$-vector spaces, $T_{(k,C)}$, as C runs through all perfect complexes over $k$. These determine the value of $T$ on all maps $spec(A) \to \rperf$ which represent free $A$-modules. 
+
+Of course, if each T had some kind of "rank $n$ part" or "Euler-characteristic n" part for each integer, $n$, and such a $T$ was determined by these modules for each n, then the K theory of our category would be much easier to compute. 
+
+\section{Two failed approaches}
+
+So a natural approach to this problem, hinted at above, is to look for an exhaustive set of terminal objects of subcategories of the category of affine derived schemes over $\rperf$, which indexes (\ref{firstlim}). For example, the subcategory of free modules has the collection of terminal objects indexed by all perfect complexes over the ground field, $k$. 
+
+I mostly have not found a satisfactory collection of such terminal objects. I think doing so would amount to finding derived grassmanians which are affine, and I don't think this can be done. 
+
+Some of my attempts at doing this lead me to the construction of the cotangent complex of a ring map and the hueristic in section 4 of these notes. 
+
+
+Another approach is to try to find constraints on objects of $\lperperf$ coming from the gluing condition for sheaves on $\rperf$. An example lemma which would offer such a constraint would be that: for any $T\in\lperperf,$ for all $A\in k- sCalg$ and $A$-modules, $M$, there must be a map over $\rperf$ between $M:specA \to \rperf$ and $T_{(A,M)}:specA\to\rperf$. 
+
+Such constraints, were I to find any, would most likely suggest a presentation of $\rperf$ as a groupoid quotient. So far I haven't really found any such constraints. 
+
+A lot of my attempts in this area have been inspired by the following observations from a paper on shifted symplectic structures. 
+
+\section{Useful observations of Pantev et. al}
+
+Pantev, Toen, Vaquie, and Vezzosi make the following observations about RPerf in their Shifted Symplectic Structures article:
+
+$\bullet$ If we let $$\cala := \mathbb{R}Hom(\canon,\canon) \simeq \canon \otimes \canon^{\wedge}$$ be the endomorphism complex over $\rperf$ of the canonical complex, $\canon,$ then the group stack, $GL_{1}(\cala),$ over $\rperf$ is canonically isomorphic over $\rperf$ to the derived loop stack, $$\mathcal{L}\rperf:=Map_{D^-St_k}(S^{1},\rperf)\to\rperf.$$
+
+(This equivalence comes from viewing $S^1$ as $B\mathbb{Z}$ and noting that a map $B\mathbb{Z}\to\rperf$ picks out a module and an automorphism of that module.)
+
+$\bullet$ The authors then show that the tangent complex, $\mathbb{T}_{\rperf}$,is equivalent to $\cala[1],$ and that
+
+$\bullet$ there is a nondegenerate two form: $$\tperf\wedge\tperf \simeq Sym^2 [2](\cala) \to \mathcal{O} [2]$$
+
+defined by a shift by 2 of: $$\cala\otimes\cala \to \cala \to \mathcal{O},$$
+
+where the first map is multiplication and the second map is evaluation (aka trace). 
+
+
+$\bullet$ The above endows $\rperf$ with a 2-shifted symplectic structure. 
+
+
+\section{The general situation, $L_{pe}(M_{C})$, and a heuristic that may be helpful}
+
+If we let $$M_{\_}:Ho(dg-Cat^{op})\to D^{-}St_{k}$$
+
+denote Toen and Vaquie's Moduli of objects functor, then $M_{\_}$ has a left adjoint, $L_{pe}$, taking a stack to it's $dg$-category of perfect complexes. Hence we can construct the standard resolution $X_{C}\to C$:
+
+\begin{equation}\label{resolution}
+(X_{C})_{n} = (L_{pe}\circ M_{\_})^{\circ(n+1)}.
+\end{equation}
+
+We also have that, for a saturated $C,$ $M_{C}(k)$ is a classifying space for pseudo-perfect $C^{op}$ modules (those modules which are object-wise quasi-isomorphic to perfect complexes of k-modules). The group completion of this space should look like $\Omega^{\infty}K(C)$. 
+
+It is for this reason that I believe I may be able to write the $K$-theory of $\lpemc$ as the first stage in some simplicial resolution of K(C). 
+
+\end{document}
