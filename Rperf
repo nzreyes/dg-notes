@@ -28,7 +28,7 @@ We are interested in the K theory of the dg-category of perfect complexes on $\m
 L_{pe}(\mathbb{R}perf) = \lim_{specA\rightarrow \mathbb{R}perf}\hat{A}_{pe},
 \end{equation}
 
-where the above homotopy limit is indexed by all maps from affine derived schemes into $\mathbb{R}perf$, and $\hat{A}_{pe}$ denotes the dg-category of perfect modules over the normalization of a simplicial commutative algebra, $A$, with quasi-isomorphisms inverted. We will always refer to objects of $\hat{A}_{pe}$ just as perfect $A$-modules and write tensor products, etc., with the normalization operation omitted. 
+where the above homotopy limit is indexed by all maps from affine derived schemes into $\mathbb{R}perf$, and $\hat{A}_{pe}$ denotes the dg-category of perfect modules over the normalization of a simplicial commutative algebra, $A$. We will always refer to objects of $\hat{A}_{pe}$ just as perfect $A$-modules and write tensor products, etc., with the normalization operation omitted. 
 
 Applying Yoneda, we see that the data of a perfect complex, $T$, on $\mathbb{R}perf$ consists of: 
 
@@ -52,6 +52,7 @@ I mostly have not found a satisfactory collection of such terminal objects. I th
 
 Some of my attempts at doing this lead me to the construction of the cotangent complex of a ring map and the hueristic in section 4 of these notes. 
 
+More recently, returning to this topic has led me to the categories of section 5. 
 
 Another approach is to try to find constraints on objects of $\lperperf$ coming from the gluing condition for sheaves on $\rperf$. An example lemma which would offer such a constraint would be that: for any $T\in\lperperf,$ for all $A\in k- sCalg$ and $A$-modules, $M$, there must be a map over $\rperf$ between $M:specA \to \rperf$ and $T_{(A,M)}:specA\to\rperf$. 
 
@@ -92,5 +93,44 @@ denote Toen and Vaquie's Moduli of objects functor, then $M_{\_}$ has a left adj
 We also have that, for a saturated $C,$ $M_{C}(k)$ is a classifying space for pseudo-perfect $C^{op}$ modules (those modules which are object-wise quasi-isomorphic to perfect complexes of k-modules). The group completion of this space should look like $\Omega^{\infty}K(C)$. 
 
 It is for this reason that I believe I may be able to write the $K$-theory of $\lpemc$ as the first stage in some simplicial resolution of K(C). 
+
+\section{Tensor classes}
+
+Upon returning to an attempt to simplify the indexing category of (\ref{firstlim}) discussed in section 2 above, I am led to consider the following categories. 
+
+Given a dg-commutative-algebra, $A$, and a perfect $A$-module, $P$, we construct two classical 1-categories, which may be enhanced to dg-categories: the \emph{positive} and \emph{negative tensor class} of $(A,P)$. Let $Cl^+_{A}(P)$ be the category whose objects are tuples $(B,U,f,\phi)$, with $B$ another dg-commutative-algebra, $U$, a perfect $B$ module, $f:A \rightarrow B$, a dg-algebra homomorphism, and $\phi$ a $B$-module equivalence: $$U\simeq P \otimes _{f}B.$$ Maps in this 1-category are the natural ones to define, requiring commutativity data. (It is obviously more natural to consider the dg version of this category.) Dually, we have the 1-category, $Cl^{-}_{A}(P)$, whose objects are tuples $(C,V,g,\psi)$, in which $g:C \rightarrow A$, and $\psi$ is an $A$-module equivalence: $$P\simeq V \otimes_{g}A.$$
+
+
+When considering the value of a sheaf, $\mathcal{F}$, on $\rperf$, at a map $P:specA \rightarrow \rperf ,$ these categories dictate how and for which maps $Q:specB \rightarrow \rperf$ the value of $\mathcal{F}$ on $P$ is constrained by its value on $Q$. 
+
+For example, the $A$-module, $\mathcal{F}_{P}$, carries an action by another dg-ring constructed as follows. 
+
+First observe that if we take two objects
+
+
+\section{Tannakian vs. Derived-Algebraic geometry}
+
+I come back again and again to one philosophical point. Toen and Vaquie's moduli stack of objects, for a symmetric monoidal, linear $\infty$-category $T$, "is" $specT$ in Tannakian Geometry (really $spec(Perf(T))$). This is a statement I still need to make precise, as stacks in tannakian geometry are far more general objects than derived stacks, and I do not know how well behaved the "truncation" functor is, and how it behaves in relation to the functors $QCoh$ and $L_{pe}$. 
+
+
+Tannakian geometry is the the stack theory in which the category of affine stacks is taken to be opposite to the $\infty$-category of symmetric monoidal, linear $\infty$-categories. What I have read about the theory (aside from as a specification of Toen and Vezzozi's general theory) has all been in the section 6 crash course of Hoyois, Scherotzke, and Sibilla's paper on traces, noncommutatve motives and categorified chern characters. 
+
+
+From this standpoint, the K theory of the stack $specT$ should be related to categories enriched over T. There is a clear increase in "categorical level." It gives me hope to compute the K theory of such a stack in terms of secondary K theory, or even iterated K theory. 
+
+
+\section{Secondary K theory and Iterated K Theory}
+
+Secondary $K$-theory, an idea first floated by Toen. It is a version of algebraic K theory that replaces projective modules over a ring with smooth, proper, triangulated categories linear over that ring. The global version has been defined differently in different sources, but all definitions involve categorical sheaves on stacks, i.e. sheaves of dg-categories. 
+
+
+Iterated K theory, especially as it relates to secondary K theory is mentioned in Hoyois, Scherotzke, and Sibilla. Iterated K theory of the complex topological K theory spectrum is studied in a paper by Lind, Sati, and Westerland. 
+
+
+\section{Is $L_{pe} (M_{-})$ an additive invariant?}
+
+I got bogged down trying to prove even that $L_{pe} (M_{-})$ commutes with filtered colimits. Nick Rozenblyum has a small note I found recently on filtered colimits of $\infty$-categories that will hopefully be helpful. 
+
+
 
 \end{document}
