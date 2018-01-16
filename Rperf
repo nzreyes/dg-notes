@@ -9,6 +9,20 @@
 \newcommand{\cala}{\mathcal{A}}
 \newcommand{\tperf}{\mathbb{T}_{\rperf}}
 
+
+\makeatletter
+\newcommand{\colim@}[2]{%
+  \vtop{\m@th\ialign{##\cr
+    \hfil$#1\operator@font colim$\hfil\cr
+    \noalign{\nointerlineskip\kern1.5\ex@}#2\cr
+    \noalign{\nointerlineskip\kern-\ex@}\cr}}%
+}
+\newcommand{\colim}{%
+  \mathop{\mathpalette\colim@{\rightarrowfill@\textstyle}}\nmlimits@
+}
+\makeatother
+
+
 \title{Rperf}
 
 
@@ -19,6 +33,8 @@
 \begin{document}
 
 \maketitle
+
+All algebras are defined over a ground field, $k.$
 
 \section {What we are computing}
 
@@ -105,12 +121,18 @@ When considering the value of a sheaf, $\mathcal{F}$, on $\rperf$, at a map $P:s
 
 For example, the $A$-module, $\mathcal{F}_{P}$, carries an action by another dg-ring constructed as follows. 
 
-First observe that if we take two objects
+First observe that we have a functor $$End:Cl_{A}^{-}(P)\rightarrow dg-k-alg,$$ defined by mapping $(C,V,g,\psi)$ to the endomorphism ring, $End_C(V).$ Functoriality arrises from the fact that, by definition, an arrow, $$(C,V,g,\psi)\rightarrow(C',V',g',\psi '),$$ in $Cl_A^{-}(P)$ includes, as data, a ring map $C\rightarrow C'$ and an equivalence between $V'$ and $V \otimes C'$. Hence a $C$-linear endomorphism of V may be "tensored up" to a $C'$-linear endomorphism of $V'$. 
+
+Now we construct the dg-algebra, $\mathcal{S}_P$, which will act on $\mathcal{F}_P$ for any $\mathcal{F}\in L_{pe}(\rperf)$. Let $\mathcal{S}$ bet the homotopy limit of dg-algebras: $$\mathcal{S}_P := \lim_{(C,V,g,\psi)\in Cl_{A}^-(P)}End_{C}(V).$$
+
+Dually we have the homotopy colimit:
+
+$$\mathcal{T}_P := \colim_{(B,U,f,\phi)\in Cl^{+}_{A}(P)}B.$$
 
 
 \section{Tannakian vs. Derived-Algebraic geometry}
 
-I come back again and again to one philosophical point. Toen and Vaquie's moduli stack of objects, for a symmetric monoidal, linear $\infty$-category $T$, "is" $specT$ in Tannakian Geometry (really $spec(Perf(T))$). This is a statement I still need to make precise, as stacks in tannakian geometry are far more general objects than derived stacks, and I do not know how well behaved the "truncation" functor is, and how it behaves in relation to the functors $QCoh$ and $L_{pe}$. 
+I come back again and again to one philosophical point. Toen and Vaquie's moduli stack of objects, for a symmetric monoidal, linear $\infty$-category $T$, "is" $specT$ in Tannakian Geometry (really $spec\hat{T}_{pe}$). This is a statement I still need to make precise, as stacks in tannakian geometry are far more general objects than derived stacks, and I do not know how well behaved the "truncation" functor is, and how it behaves in relation to the functors $QCoh$ and $L_{pe}$. 
 
 
 Tannakian geometry is the the stack theory in which the category of affine stacks is taken to be opposite to the $\infty$-category of symmetric monoidal, linear $\infty$-categories. What I have read about the theory (aside from as a specification of Toen and Vezzozi's general theory) has all been in the section 6 crash course of Hoyois, Scherotzke, and Sibilla's paper on traces, noncommutatve motives and categorified chern characters. 
